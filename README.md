@@ -1,69 +1,103 @@
-# 🍽️ Yummy – Recipe Sharing Web App
+# Yummy — Recipe Explorer
 
-**Yummy** is a dynamic web application built with **HTML, CSS, Bootstrap, JavaScript, and jQuery**. It allows users to explore, search, and share recipes from various cities, creating a community for culinary enthusiasts.
+**Live demo:** https://yummy-blush-nine.vercel.app
 
----
+Yummy is a responsive recipe-discovery web app built with HTML, CSS, Bootstrap, JavaScript, and jQuery. It integrates TheMealDB API to let users browse meals, search by name or first letter, explore categories, areas, and ingredients, and open detailed recipe instructions.
 
-## 🌟 Key Features
+## Core features
 
-- ✅ **Browse Recipes** – Explore a wide collection of recipes  
-- ✅ **City-Based Search** – Filter recipes by city  
-- ✅ **Ingredient Details** – View full ingredient lists  
-- ✅ **Responsive Design** – Works on desktop and mobile  
-- ✅ **User-Friendly Interface** – Easy navigation and search  
+- Browse meals from TheMealDB
+- Search recipes by name or first letter
+- Explore meals by category
+- Explore meals by geographic area
+- Browse common ingredients
+- View recipe instructions, measurements, tags, source links, and YouTube links
+- Client-side contact-form validation
+- Responsive Bootstrap layout
+- Animated navigation and loading states
 
----
+## Portfolio boundaries
 
-## 🛠️ Technologies Used
+This is a front-end portfolio project:
 
-- **HTML5** – structure the content  
-- **CSS3** – styling and layout  
-- **Bootstrap** – responsive design and UI components  
-- **JavaScript** – interactivity  
-- **jQuery** – simplified DOM manipulation and AJAX  
+- Recipe data comes from TheMealDB; there is no custom backend.
+- The contact form demonstrates client-side validation only and does not submit to a server.
+- There are no user accounts, saved recipes, or community-sharing features.
+- Navigation and rendering are handled client-side with JavaScript and jQuery.
 
----
+## Architecture at a glance
 
-## 📂 Project Structure
+```mermaid
+flowchart LR
+  UI[Single-page UI] --> JS[JavaScript + jQuery]
+  JS --> MealDB[TheMealDB API]
+  JS --> Search[Search flows]
+  JS --> Categories[Categories]
+  JS --> Areas[Areas]
+  JS --> Ingredients[Ingredients]
+  JS --> Details[Recipe details]
+  JS --> Validation[Contact validation]
+  Deploy[Vercel] --> UI
+```
+
+## Recruiter quick scan
+
+- Vanilla JavaScript API integration using async/await and fetch
+- jQuery-driven navigation and transitions
+- Multiple discovery flows from one API
+- Dynamic DOM rendering from remote data
+- Responsive Bootstrap UI
+- Client-side validation with user feedback
+- Live Vercel deployment
+
+## Tech stack
+
+- HTML5
+- CSS3
+- Bootstrap
+- JavaScript
+- jQuery
+- Font Awesome
+- TheMealDB API
+
+## Project structure
+
+```text
 Yummy/
-┣ css/ # Stylesheets
-┣ images/ # Recipe images
-┣ js/ # JavaScript files
-┣ webfonts/ # Fonts
-┣ index.html # Main landing page
-┗ README.md # Project documentation
+├── css/        # Bootstrap, Font Awesome, and custom styles
+├── images/     # Local assets
+├── js/
+│   ├── index.js
+│   ├── jquery-3.6.1.min.js
+│   └── bootstrap.bundle.min.js
+├── webfonts/
+├── index.html
+└── README.md
+```
 
-yaml
-Copy code
-
----
-
-## 📥 How to Use
-
-1. **Clone the repository:**
+## Run locally
 
 ```bash
 git clone https://github.com/SamirNexus/Yummy.git
-Open the project:
-Navigate to the project folder and open index.html in your browser.
+cd Yummy
+```
 
-Explore the app:
+Open `index.html` directly, or use a local static server:
 
-Browse recipes
+```bash
+npx serve .
+```
 
-Search by city or name
+## Portfolio highlights
 
-View ingredients for each recipe
+- Integrated multiple TheMealDB endpoints into a single interactive recipe explorer
+- Implemented search, category, area, ingredient, and detail flows
+- Rendered remote API data dynamically into reusable UI patterns
+- Added animated navigation, loading feedback, and responsive layouts
+- Built client-side contact-form validation without backend dependencies
+- Deployed the project with Vercel
 
-Contribute:
+## Author
 
-Fork the repo
-
-Make your changes
-
-Submit a pull request
-
-📌 Notes
-Designed for learning and personal use
-
-Contributions are welcome following standard GitHub guidelines
+**Mohamed Samir** — Front-End Developer  
+[GitHub](https://github.com/SamirNexus) · [LinkedIn](https://www.linkedin.com/in/samirnexus98/)
